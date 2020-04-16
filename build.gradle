@@ -24,6 +24,23 @@ allprojects {
     }
 }
 
+ext {
+    //第三方库版本
+    libraries = [
+            okhttp            : '3.11.0',
+            okhttpLogging     : '3.9.0',
+            rxjava            : '2.2.2',
+            rxandroid         : '2.1.1',
+            retrofit          : '2.4.0',
+            butterknife       : '10.1.0',
+            dagger            : '2.6',
+            rxbinding         : '1.0.1',
+            eventbus          : '3.2.0',
+            glide             : '4.9.0',
+            gson              : '2.8.5',
+    ]
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

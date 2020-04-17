@@ -1,14 +1,14 @@
 package com.overdose.homeschooljoint;
 
 import android.os.Bundle;
-import android.view.View;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
-import com.overdose.homeschooljoint.fragment.MeFragment;
 import com.overdose.homeschooljoint.fragment.MenuFragment;
+import com.overdose.homeschooljoint.fragment.MeFragment;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         fragmentManager = getSupportFragmentManager();
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         if (fragmentList.size() > 0) {
             ActivityUtils.addFragmentToActivity(fragmentManager, fragmentList.get(0), R.id.container,
-                    MenuFragment.TAG);
+                    MeFragment.TAG);
 
             //设置默认第一个选中
             currentFragment = fragmentList.get(0);
@@ -75,11 +76,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
         switch (checkedId) {
             case R.id.rd_menu_menu:
-                switchContent(currentFragment, menuFragment, MenuFragment.TAG);
+                switchContent(currentFragment, menuFragment, MeFragment.TAG);
                 break;
 
             case R.id.rd_menu_me:
-                switchContent(currentFragment, meFragment, MeFragment.TAG);
+                switchContent(currentFragment, meFragment, MenuFragment.TAG);
                 break;
 
 

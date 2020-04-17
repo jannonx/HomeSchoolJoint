@@ -9,15 +9,12 @@ import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.base.api.ApiServiceComponent;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import butterknife.BindView;
 
 public abstract class BaseToolbarActivity extends BaseActivity {
 
     @BindView(R.id.tv_title)
     protected TextView titleCenter;
-    @BindView(R.id.toolbar)
-    protected Toolbar toolbar;
     @BindView(R.id.iv_back)
     protected ImageView ivBack;
 

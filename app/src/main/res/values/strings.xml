@@ -5,4 +5,15 @@
   <string name="cancel">取消</string>
 
   <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+  <style name="commit_btn" parent="Widget.AppCompat.TextView">
+    <item name="android:layout_width">290dp</item>
+    <item name="android:layout_height">42dp</item>
+    <item name="android:layout_marginTop">25dp</item>
+    <item name="android:background">@drawable/bg_blue_corner20</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@color/color_white</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:textSize">17sp</item>
+    <item name="android:text">提交</item>
+  </style>
 </resources>

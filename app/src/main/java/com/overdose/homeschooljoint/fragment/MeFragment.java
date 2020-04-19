@@ -35,7 +35,7 @@ public class MeFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.ll_user_center, R.id.ll_modify_pw, R.id.ll_logout})
+    @OnClick({R.id.ll_user_center, R.id.ll_modify_pw})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
@@ -45,9 +45,9 @@ public class MeFragment extends BaseFragment {
             case R.id.ll_modify_pw:
                 ModifyPWActivity.start(getContext());
                 break;
-            case R.id.ll_logout:
-
-                break;
+//            case R.id.ll_logout:
+//
+//                break;
             default:
         }
     }

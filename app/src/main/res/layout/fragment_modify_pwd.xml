@@ -4,6 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="21dp"-->
+    <!--        android:layout_marginLeft="53dp"-->
+    <!--        -->
+    <!--        android:layout_marginRight="53dp"-->
+    <!--        android:gravity="center_vertical">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:src="@mipmap/login_pwd" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/old_pwd_et"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginLeft="18dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@null"-->
+    <!--            android:hint="旧密码"-->
+    <!--            -->
+    <!--            android:textSize="15sp" />-->
+
+
+    <!--    </LinearLayout>-->
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0.5dp"-->
+    <!--        android:layout_marginLeft="53dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:layout_marginRight="53dp"-->
+    <!--        android:layout_marginBottom="14dp"-->
+    <!--        android:background="@color/color_grey_757575" />-->
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="21dp"
@@ -19,51 +57,15 @@
             android:src="@mipmap/login_pwd" />
 
         <EditText
-            android:id="@+id/old_pwd_et"
+            android:id="@+id/et_new_pwd"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="18dp"
             android:layout_weight="1"
             android:background="@null"
-            android:hint="旧密码"
-            android:inputType="textPassword"
-            android:textSize="15sp" />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="53dp"
-        android:layout_marginBottom="14dp"
-        android:background="@color/color_grey_757575" />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="21dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginRight="53dp"
-        android:gravity="center_vertical">
-
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@mipmap/login_pwd" />
-
-        <EditText
-            android:id="@+id/new_pwd_et"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="18dp"
-            android:layout_weight="1"
-            android:background="@null"
-            android:hint="请设置6位以上密码"
-            android:inputType="textPassword"
+            android:hint="请设置新密码"
+            
+            android:singleLine="true"
             android:textSize="15sp" />
 
 
@@ -92,14 +94,15 @@
             android:src="@mipmap/login_pwd" />
 
         <EditText
-            android:id="@+id/confirm_pwd_et"
+            android:id="@+id/et_confirm_pwd"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="18dp"
             android:layout_weight="1"
             android:background="@null"
             android:hint="重复新密码"
-            android:inputType="textPassword"
+            
+            android:singleLine="true"
             android:textSize="15sp" />
 
 
@@ -116,6 +119,7 @@
 
 
     <TextView
-        android:id="@+id/modify_password_tv"
-        style="@style/commit_btn" />
+        android:id="@+id/tv_modify_password"
+        style="@style/commit_btn"
+        android:text="提交修改" />
 </LinearLayout>

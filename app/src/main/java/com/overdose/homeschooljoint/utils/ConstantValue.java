@@ -15,6 +15,8 @@ public class ConstantValue {
 
     public static final String USER_JSON_STRING = "USER_JSON_STRING";
     public static final String KEY_USER_NAME = "KEY_USER_NAME";
+    public static final String USER_ROLE_STUDENT = "1";
+    public static final String USER_ROLE_TEACHER = "0";
 
     public static final String TITLE = "title";
 }

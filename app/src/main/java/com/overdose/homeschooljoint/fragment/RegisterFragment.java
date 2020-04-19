@@ -3,9 +3,12 @@ package com.overdose.homeschooljoint.fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -15,14 +18,19 @@ import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.activity.LoginActivity;
 import com.overdose.homeschooljoint.activity.RegisterActivity;
 import com.overdose.homeschooljoint.base.BaseFragment;
+import com.overdose.homeschooljoint.bean.ClassBean;
+import com.overdose.homeschooljoint.bean.CourseBean;
 import com.overdose.homeschooljoint.bean.RegisterQBean;
-import com.overdose.homeschooljoint.bean.RegisterRBean;
+import com.overdose.homeschooljoint.bean.UserBean;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
 import com.overdose.homeschooljoint.utils.ApiCallback;
 import com.overdose.homeschooljoint.utils.AppClient;
 import com.overdose.homeschooljoint.utils.ConstantValue;
 import com.overdose.homeschooljoint.utils.LogUtils;
 import com.overdose.homeschooljoint.utils.ToastUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -48,13 +56,19 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
     EditText etCode;
     @BindView(R.id.label_class)
     TextView labelClass;
-    @BindView(R.id.et_class)
-    EditText etClass;
-
+    @BindView(R.id.spinner_view)
+    Spinner spinnerView;
 
     private int checkedRadioButtonId;
     private String roleName;
     private String role;
+
+    List<String> classArr = new ArrayList<>();
+    List<String> courseArr = new ArrayList<>();
+    private List<CourseBean.DataBean> courseData;
+    private List<ClassBean.DataBean> classData;
+    private String classCode;
+    private int checkedRbId;
 
     public static RegisterFragment newInstance() {
         Bundle args = new Bundle();
@@ -84,11 +98,14 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
 
     @Override
     protected void initialization() {
-        int checkedRbId = getArguments().getInt(ConstantValue.TITLE, 0);
+        getStudentClass();
+        getCourse();
+
+        checkedRbId = getArguments().getInt(ConstantValue.TITLE, 0);
         roleName = checkedRbId == 0 ? "student" : "teacher";
         role = checkedRbId == 0 ? "1" : "0";//role 1 是学生 role 0 是教师
-        labelClass.setText(checkedRbId == 0 ? "班别" : "课程");
-        labelCode.setText(checkedRbId == 0 ? "学号" : "职工号");
+        labelClass.setText(checkedRbId == 0 ? "班别:" : "课程:");
+        labelCode.setText(checkedRbId == 0 ? "学号:" : "职工号:");
 
         rdGroup.setOnCheckedChangeListener(this);
         rbMan.setChecked(true);
@@ -126,8 +143,7 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
         String name = etName.getText().toString().trim();
         String pw = etPw.getText().toString().trim();
         String code = etCode.getText().toString().trim();
-        String sClass = etClass.getText().toString().trim();
-        if (checkInfo(name) || checkInfo(pw) || checkInfo(code) || checkInfo(sClass)) {
+        if (checkInfo(name) || checkInfo(pw) || checkInfo(code)) {
             return;
         }
         RegisterQBean rBean = new RegisterQBean();
@@ -135,8 +151,9 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
         rBean.setName(name);
         rBean.setSex(checkedRadioButtonId == 0 ? "男" : "女");
         rBean.setPassword(pw);
-        rBean.setCode(code);
-        rBean.setClasss(sClass);
+        rBean.setCode(code);//学号
+        rBean.setClasss(checkedRbId == 0 ? classCode : "");
+        rBean.setCoursecode(checkedRbId == 0 ? "" : classCode);
         rBean.setRole(role);
         LogUtils.showLog("RegisterQBean=" + rBean.toString());
         register(rBean);
@@ -152,18 +169,77 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
 
     }
 
+    public void getStudentClass() {
+        AppClient.subscribe(AppClient.getServerApi().getClasses(), new ApiCallback<ClassBean>() {
+
+            @Override
+            public void onSuccess(ClassBean model) {
+                LogUtils.showLog("model=" + model.getData().get(0).getClasscame());
+                classData = model.getData();
+                if (model.getStatus() == 200) {
+                    for (ClassBean.DataBean dataBean : model.getData()) {
+                        classArr.add(dataBean.getClasscame());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int code, String msg) {
+                ToastUtil.showToast(getContext(), "注册失败!请重新注册!");
+            }
+
+            @Override
+            public void onFinish() {
+                LogUtils.showLog("model=" + classArr.size());
+                String[] stringArray = classArr.toArray(new String[classArr.size()]);
+                LogUtils.showLog("model=" + stringArray.length);
+                if (checkedRbId == 0) addSpinner(stringArray);
+            }
+        });
+    }
+
+    public void getCourse() {
+        AppClient.subscribe(AppClient.getServerApi().getCourse(), new ApiCallback<CourseBean>() {
+
+            @Override
+            public void onSuccess(CourseBean model) {
+                courseData = model.getData();
+                if (model.getStatus() == 200) {
+                    for (CourseBean.DataBean dataBean : courseData) {
+                        courseArr.add(dataBean.getCoursename());
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(int code, String msg) {
+                ToastUtil.showToast(getContext(), "注册失败!请重新注册!");
+            }
+
+            @Override
+            public void onFinish() {
+                LogUtils.showLog("model11=" + courseArr.size());
+                String[] stringArray = courseArr.toArray(new String[courseArr.size()]);
+                LogUtils.showLog("model11=" + stringArray.length);
+                if (checkedRbId != 0) addSpinner(stringArray);
+            }
+        });
+    }
+
     public void register(RegisterQBean bean) {
         AppClient.subscribe(AppClient.getServerApi().queryRegister(bean.getRoleName(),
                 bean.getName(), bean.getCode(), bean.getPassword(), bean.getClasss(), bean.getSex(), bean.getCoursecode(), bean.getRole()),
-                new ApiCallback<RegisterRBean>() {
+                new ApiCallback<UserBean>() {
 
 
                     @Override
-                    public void onSuccess(RegisterRBean model) {
+                    public void onSuccess(UserBean model) {
                         LogUtils.showLog("model=" + model.getData().getName());
                         if (model.getStatus() == 200) {
                             AppApplication.getInstance().saveCacheData(ConstantValue.USER_JSON_STRING,
                                     new Gson().toJson(model.getData()));
+                            LogUtils.showLog("model=" +  new Gson().toJson(model.getData()));
                             MainActivity.start(getContext());
                             ActivityUtils.removeActivity(LoginActivity.class.getSimpleName());
                             ActivityUtils.removeActivity(RegisterActivity.class.getSimpleName());
@@ -178,7 +254,32 @@ public class RegisterFragment extends BaseFragment implements RadioGroup.OnCheck
 
                     @Override
                     public void onFinish() {
+
                     }
                 });
+    }
+
+    private void addSpinner(String[] data) {
+//        String[] spinnerList = data;
+//        LogUtils.showLog("spinnerList=" + data.length);
+        classCode = checkedRbId == 0 ? classData.get(0).getClasscode() : courseData.get(0).getCoursecode();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.item_spinner, data);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerView.setAdapter(adapter);
+        spinnerView.setSelection(0, true);
+
+
+        spinnerView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                classCode = checkedRbId == 0 ? classData.get(pos).getClasscode() : courseData.get(pos).getCoursecode();
+                LogUtils.showLog("classCode=" + classCode);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }

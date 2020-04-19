@@ -1,6 +1,10 @@
 package com.overdose.homeschooljoint.bean;
 
-public class RegisterRBean {
+import com.overdose.homeschooljoint.utils.ConstantValue;
+
+import androidx.annotation.NonNull;
+
+public class UserBean {
 
     /**
      * status : 200
@@ -55,10 +59,20 @@ public class RegisterRBean {
         private String code;
         private String sex;
         private String coursecode;
+        private String coursename;
         private String classcode;
+        private String classname;
         private String role;
         private String createtime;
         private String updatetime;
+
+        public boolean isStudent() {
+            return ConstantValue.USER_ROLE_STUDENT.equals(role);
+        }
+
+        public String getRoleName() {
+            return isStudent() ? "student" : "teacher";
+        }
 
         public Object getId() {
             return id;
@@ -108,12 +122,28 @@ public class RegisterRBean {
             this.coursecode = coursecode;
         }
 
+        public String getCoursename() {
+            return coursename;
+        }
+
+        public void setCoursename(String coursename) {
+            this.coursename = coursename;
+        }
+
         public String getClasscode() {
             return classcode;
         }
 
         public void setClasscode(String classcode) {
             this.classcode = classcode;
+        }
+
+        public String getClassname() {
+            return classname;
+        }
+
+        public void setClassname(String classname) {
+            this.classname = classname;
         }
 
         public String getRole() {
@@ -139,5 +169,25 @@ public class RegisterRBean {
         public void setUpdatetime(String updatetime) {
             this.updatetime = updatetime;
         }
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", password='" + password + '\'' +
+                    ", code='" + code + '\'' +
+                    ", sex='" + sex + '\'' +
+                    ", coursecode='" + coursecode + '\'' +
+                    ", coursename='" + coursename + '\'' +
+                    ", classcode='" + classcode + '\'' +
+                    ", classname='" + classname + '\'' +
+                    ", role='" + role + '\'' +
+                    ", createtime='" + createtime + '\'' +
+                    ", updatetime='" + updatetime + '\'' +
+                    '}';
+        }
     }
+
+
 }

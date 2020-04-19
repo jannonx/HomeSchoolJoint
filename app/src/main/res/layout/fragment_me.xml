@@ -83,34 +83,34 @@
             android:layout_marginBottom="@dimen/dp_14"
             android:background="@color/color_grey_757575" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/ll_logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:paddingBottom="15dp">
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:id="@+id/ll_logout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:paddingBottom="15dp">-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="16dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_svg_log_out" />
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:layout_width="16dp"-->
+<!--                android:layout_height="17dp"-->
+<!--                app:srcCompat="@drawable/ic_svg_log_out" />-->
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fragment_user_setting_tv_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
-                android:text="退出登录"
-                android:textColor="@color/color_grey_6d7278"
-                android:textSize="15sp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/fragment_user_setting_tv_logout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="9dp"-->
+<!--                android:text="退出登录"-->
+<!--                android:textColor="@color/color_grey_6d7278"-->
+<!--                android:textSize="15sp" />-->
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginBottom="@dimen/dp_14"
-            android:background="@color/color_grey_757575" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:layout_marginLeft="23dp"-->
+<!--            android:layout_marginBottom="@dimen/dp_14"-->
+<!--            android:background="@color/color_grey_757575" />-->
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

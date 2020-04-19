@@ -8,7 +8,7 @@ import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.activity.CourseActivity;
 import com.overdose.homeschooljoint.activity.HomeWorkStudentActivity;
 import com.overdose.homeschooljoint.activity.HomeWorkTeacherActivity;
-import com.overdose.homeschooljoint.activity.LeaveActivity;
+import com.overdose.homeschooljoint.activity.ToLeaveActivity;
 import com.overdose.homeschooljoint.activity.RatifyActivity;
 import com.overdose.homeschooljoint.activity.ScoreActivity;
 import com.overdose.homeschooljoint.adpter.MenuAdapter;
@@ -65,7 +65,7 @@ public class MenuFragment extends BaseListFragment<MenuBean> {
                         ScoreActivity.start(getContext());
                         break;
                     case ConstantValue.ITEM_MENU_LEAVE:
-                        LeaveActivity.start(getContext());
+                        ToLeaveActivity.start(getContext());
                         break;
                     case ConstantValue.ITEM_MENU_HOMEWORK_S:
                         HomeWorkTeacherActivity.start(getContext());

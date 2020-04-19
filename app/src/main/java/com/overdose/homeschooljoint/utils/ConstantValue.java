@@ -13,4 +13,8 @@ public class ConstantValue {
     public static final String ITEM_MENU_HOMEWORK_T = "布置任务";
 
 
+    public static final String USER_JSON_STRING = "USER_JSON_STRING";
+    public static final String KEY_USER_NAME = "KEY_USER_NAME";
+
+    public static final String TITLE = "title";
 }

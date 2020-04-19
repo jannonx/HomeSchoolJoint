@@ -9,7 +9,7 @@
     <item name="android:layout_width">290dp</item>
     <item name="android:layout_height">42dp</item>
     <item name="android:layout_marginTop">25dp</item>
-    <item name="android:background">@drawable/bg_blue_corner20</item>
+    <item name="android:background">@drawable/bg_main</item>
     <item name="android:gravity">center</item>
     <item name="android:textColor">@color/color_white</item>
     <item name="android:layout_gravity">center_horizontal</item>

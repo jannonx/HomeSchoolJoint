@@ -22,6 +22,12 @@ android {
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      buildConfigField("String", "API_SERVER_URL", "\"https://api.leve.com/\"")
+    }
+    // 测试环境
+    debug {
+      minifyEnabled false
+      buildConfigField("String", "API_SERVER_URL", "\"http://118.114.244.93:60226/\"")
     }
   }
   compileOptions {
@@ -90,10 +96,14 @@ dependencies {
   implementation "io.reactivex.rxjava2:rxandroid:$libs.rxandroid"
   //implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
 
+  implementation 'io.reactivex:rxandroid:1.1.0'
+
+
   //retrofit
   implementation "com.squareup.retrofit2:retrofit:$libs.retrofit"
   implementation "com.squareup.retrofit2:converter-gson:$libs.retrofit"
 
   //Retrofit到Gson进行转换的库
-  implementation "com.squareup.retrofit2:adapter-rxjava2:$libs.retrofit"
+//  implementation "com.squareup.retrofit2:adapter-rxjava2:$libs.retrofit"
+  implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
 }

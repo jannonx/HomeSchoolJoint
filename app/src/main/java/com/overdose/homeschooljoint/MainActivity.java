@@ -1,5 +1,7 @@
 package com.overdose.homeschooljoint;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -7,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.overdose.homeschooljoint.activity.CourseActivity;
 import com.overdose.homeschooljoint.fragment.MenuFragment;
 import com.overdose.homeschooljoint.fragment.MeFragment;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private Fragment menuFragment;
     private Fragment meFragment;
     private List<Fragment> fragmentList = new ArrayList<>();
+
+    public static void start(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

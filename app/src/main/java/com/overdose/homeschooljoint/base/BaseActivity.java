@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.overdose.homeschooljoint.AppApplication;
 import com.overdose.homeschooljoint.R;
+import com.overdose.homeschooljoint.utils.ActivityUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -53,7 +54,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         application = (AppApplication) getApplication();
         fragmentManager = getSupportFragmentManager();
-
+        ActivityUtils.addActivity(this.getClass().getSimpleName(), this);
         unbinder = ButterKnife.bind(this);
         if (isEventBusNeedRegister()) {
             EventBus.getDefault().register(this);

@@ -8,6 +8,7 @@
   <color name="color_white">#FFFFFF</color>
   <color name="color_blue_6e9dd1">#6E9DD1</color>
   <color name="color_blue_1420D6">#1420D6</color>
+  <color name="color_blue_0099ff">#0099FF</color>
 
   <color name="color_grey_999999">#999999</color>
   <color name="color_main">#0070B4</color>
@@ -15,4 +16,6 @@
   <color name="color_grey_757575">#757575</color>
   <color name="color_grey_6d7278">#6D7278</color>
   <color name="color_black_111111">#111111</color>
+  <color name="color_black">#000000</color>
+  <color name="color_green_80c31c">#80C31C</color>
 </resources>

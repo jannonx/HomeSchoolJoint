@@ -8,29 +8,24 @@ import android.view.View;
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.base.BaseToolbarActivity;
 import com.overdose.homeschooljoint.fragment.CourseFragment;
-import com.overdose.homeschooljoint.fragment.HomeWorkTeacherFragment;
+import com.overdose.homeschooljoint.fragment.FeedbackTeacherFragment;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
 
-public class HomeWorkTeacherActivity extends BaseToolbarActivity {
+public class FeedbackByTeacherActivity extends BaseToolbarActivity {
     public static void start(Context context) {
-        Intent intent = new Intent(context, HomeWorkTeacherActivity.class);
+        Intent intent = new Intent(context, FeedbackByTeacherActivity.class);
         context.startActivity(intent);
     }
 
     @Override
     protected void initFragment(Bundle savedInstanceState) {
-        setTitleCenter("布置作业");
-        HomeWorkTeacherFragment fragment = HomeWorkTeacherFragment.newInstance();
+        setTitleCenter("学生反馈");
+        FeedbackTeacherFragment fragment = FeedbackTeacherFragment.newInstance();
 
         ActivityUtils.addFragmentToActivity(fragmentManager, fragment, R.id.container,
                 CourseFragment.TAG);
-        ivMenu.setVisibility(View.VISIBLE);
-        ivMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FeedbackByTeacherActivity.start(HomeWorkTeacherActivity.this);
-            }
-        });
+
+
     }
 
     @Override

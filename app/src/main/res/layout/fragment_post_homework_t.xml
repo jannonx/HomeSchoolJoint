@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_opinion"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:layout_marginRight="25dp"-->
+    <!--        android:text="请假事由"-->
+    <!--        android:textColor="@color/color_black_111111"-->
+    <!--        android:textSize="15sp" />-->
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_opinion"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:layout_marginRight="25dp"-->
+    <!--        android:background="@null"-->
+    <!--        android:gravity="start"-->
+    <!--        android:hint="请输入请假的主题"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:textSize="15sp" />-->
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:layout_marginTop="@dimen/dp_10"-->
+    <!--        android:layout_marginBottom="@dimen/dp_10"-->
+    <!--        android:background="@color/color_grey_f8f8f8" />-->
+
+    <TextView
+        android:id="@+id/label_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:text="任务内容"
+        android:textColor="@color/color_black_111111"
+        android:textSize="15sp" />
+
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="请输入任务内容"
+        android:maxLines="5"
+        android:textSize="15sp" />
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:layout_marginTop="@dimen/dp_10"-->
+    <!--        android:layout_marginBottom="@dimen/dp_10"-->
+    <!--        android:background="@color/color_grey_f8f8f8" />-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_marginRight="25dp">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_teacher"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="未选择老师"-->
+    <!--            android:textColor="@color/color_grey_999999"-->
+    <!--            android:textSize="15sp" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/iv_add_teacher"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_alignParentEnd="true"-->
+    <!--            android:src="@mipmap/ic_add_gray" />-->
+
+    <!--    </RelativeLayout>-->
+
+    <TextView
+        android:id="@+id/tv_leave_btn"
+        style="@style/commit_btn"
+        android:text="发布" />
+</LinearLayout>

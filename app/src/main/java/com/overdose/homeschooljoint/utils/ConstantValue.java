@@ -19,4 +19,5 @@ public class ConstantValue {
     public static final String USER_ROLE_TEACHER = "0";
 
     public static final String TITLE = "title";
+    public static final String CONTENT = "content";
 }

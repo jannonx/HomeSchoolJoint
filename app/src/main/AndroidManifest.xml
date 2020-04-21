@@ -59,6 +59,9 @@
             android:name=".activity.UserCenterActivity"
             android:launchMode="singleTop" />
         <activity android:name=".activity.StudentLeaveListActivity" />
+        <activity android:name=".activity.FeedbackActivity" />
+        <activity android:name=".activity.FeedbackByStudentActivity" />
+        <activity android:name=".activity.FeedbackByTeacherActivity" />
     </application>
 
 </manifest>

@@ -15,21 +15,21 @@
         android:layout_marginRight="@dimen/dp_10">
 
         <TextView
-            android:id="@+id/label_opinion"
+            android:id="@+id/label_teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="请假主题:"
+            android:text="发布老师:"
             android:textColor="@color/color_black_111111"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_opinion"
+            android:id="@+id/tv_teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
-            android:layout_toEndOf="@+id/label_opinion"
+            android:layout_toEndOf="@+id/label_teacher"
             android:text="杀马特"
             android:textColor="@color/color_grey_999999"
             android:textSize="15sp" />
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="请假内容:"
+            android:text="任务内容:"
             android:textColor="@color/color_black_111111"
             android:textSize="15sp" />
 
@@ -59,69 +59,25 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toEndOf="@+id/label_content"
-            android:text="化学"
+            android:text="化学化学化学化学化学化学化学化学化学化学化学化学化学化学化学化学化学化学化学"
             android:textColor="@color/color_grey_999999"
             android:textSize="15sp" />
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_feedback_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_10"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="@dimen/dp_10">
-
-        <TextView
-            android:id="@+id/label_teacher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="审批老师:"
-            android:textColor="@color/color_black_111111"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tv_teacher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:layout_toEndOf="@+id/label_teacher"
-            android:text="化学"
-            android:textColor="@color/color_grey_999999"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="@dimen/dp_10">
-
-        <TextView
-            android:id="@+id/label_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="审批状态:"
-            android:textColor="@color/color_black_111111"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tv_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:layout_toEndOf="@+id/label_status"
-            android:text="化学"
-            android:textColor="@color/color_grey_999999"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_weight="2"
+        android:background="@drawable/bg_main"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="问题反馈"
+        android:textColor="@color/color_white"
+        android:textSize="12sp" />
 
     <View
         android:layout_width="match_parent"

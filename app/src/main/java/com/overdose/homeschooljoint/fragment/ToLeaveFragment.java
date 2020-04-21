@@ -112,18 +112,6 @@ public class ToLeaveFragment extends BaseFragment {
     leave(rBean);
   }
 
-  /**
-   * private String approvercode;//必填
-   * private String approvername;//必填
-   * private String opinion;//必填
-   * private String reason;//必填
-   * private String starttime;//必填
-   * private String studentcode;//必填
-   * private String studentname;//必填
-   * private String updatetime;//必填
-   */
-
-
   private boolean checkInfo(String info) {
     if (TextUtils.isEmpty(info)) {
       ToastUtil.showToast(getContext(), "信息不能为空");

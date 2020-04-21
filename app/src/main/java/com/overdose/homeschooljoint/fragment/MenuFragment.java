@@ -76,13 +76,13 @@ public class MenuFragment extends BaseListFragment<MenuBean> {
             ToLeaveActivity.start(getContext());
             break;
           case ConstantValue.ITEM_MENU_HOMEWORK_S:
-            HomeWorkTeacherActivity.start(getContext());
+            HomeWorkStudentActivity.start(getContext());
             break;
           case ConstantValue.ITEM_MENU_RATIFY:
             RatifyActivity.start(getContext());
             break;
           case ConstantValue.ITEM_MENU_HOMEWORK_T:
-            HomeWorkStudentActivity.start(getContext());
+            HomeWorkTeacherActivity.start(getContext());
             break;
         }
       }

@@ -3,6 +3,7 @@ package com.overdose.homeschooljoint.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.base.BaseToolbarActivity;
@@ -24,6 +25,14 @@ public class ToLeaveActivity extends BaseToolbarActivity {
 
         ActivityUtils.addFragmentToActivity(fragmentManager, fragment, R.id.container,
                 CourseFragment.TAG);
+
+        ivMenu.setVisibility(View.VISIBLE);
+        ivMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StudentLeaveListActivity.start(ToLeaveActivity.this);
+            }
+        });
     }
 
     @Override

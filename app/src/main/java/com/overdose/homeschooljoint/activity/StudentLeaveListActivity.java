@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.base.BaseToolbarActivity;
 import com.overdose.homeschooljoint.fragment.CourseFragment;
+import com.overdose.homeschooljoint.fragment.StudentLeaveListFragment;
 import com.overdose.homeschooljoint.fragment.TeacherListFragment;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
 
@@ -18,8 +19,8 @@ public class StudentLeaveListActivity extends BaseToolbarActivity {
 
     @Override
     protected void initFragment(Bundle savedInstanceState) {
-        setTitleCenter("老师列表");
-        TeacherListFragment fragment = TeacherListFragment.newInstance();
+        setTitleCenter("个人请假列表");
+        StudentLeaveListFragment fragment = StudentLeaveListFragment.newInstance();
 
         ActivityUtils.addFragmentToActivity(fragmentManager, fragment, R.id.container,
                 CourseFragment.TAG);

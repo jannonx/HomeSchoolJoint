@@ -8,6 +8,7 @@ import com.overdose.homeschooljoint.AppApplication;
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.base.BaseFragment;
 import com.overdose.homeschooljoint.bean.UserBean;
+import com.overdose.homeschooljoint.bean.UserDataBean;
 import com.overdose.homeschooljoint.utils.ConstantValue;
 
 import butterknife.BindView;
@@ -52,7 +53,7 @@ public class UserCenterFragment extends BaseFragment {
     protected void initialization() {
         String userStr =
                 (String) AppApplication.getInstance().getCacheData(ConstantValue.USER_JSON_STRING, "");
-        UserBean.DataBean userData = new Gson().fromJson(userStr, UserBean.DataBean.class);
+        UserDataBean userData = new Gson().fromJson(userStr, UserDataBean.class);
         labelName.setText(userData.isStudent() ? "学生姓名" : "教师姓名");
         tvName.setText(userData.getName());
         tvSex.setText(userData.getSex());

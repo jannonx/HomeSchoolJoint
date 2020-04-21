@@ -13,35 +13,37 @@ import butterknife.BindView;
 
 public abstract class BaseToolbarActivity extends BaseActivity {
 
-    @BindView(R.id.tv_title)
-    protected TextView titleCenter;
-    @BindView(R.id.iv_back)
-    protected ImageView ivBack;
+  @BindView(R.id.tv_title)
+  protected TextView titleCenter;
+  @BindView(R.id.iv_back)
+  protected ImageView ivBack;
+  @BindView(R.id.iv_menu)
+  protected ImageView ivMenu;
 
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initFragment(savedInstanceState);
-        initToolBar();
-    }
+  @Override
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    initFragment(savedInstanceState);
+    initToolBar();
+  }
 
-    protected void initToolBar() {
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
+  protected void initToolBar() {
+    ivBack.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        finish();
+      }
+    });
+  }
 
-    protected ApiServiceComponent getApiServiceComponent() {
-        return application.getApiServiceComponent();
-    }
+  protected ApiServiceComponent getApiServiceComponent() {
+    return application.getApiServiceComponent();
+  }
 
-    protected void setTitleCenter(String title) {
-        titleCenter.setText(title);
-    }
+  protected void setTitleCenter(String title) {
+    titleCenter.setText(title);
+  }
 
-    protected abstract void initFragment(Bundle savedInstanceState);
+  protected abstract void initFragment(Bundle savedInstanceState);
 }

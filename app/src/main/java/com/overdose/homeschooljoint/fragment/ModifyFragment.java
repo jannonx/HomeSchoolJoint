@@ -13,6 +13,7 @@ import com.overdose.homeschooljoint.base.BaseFragment;
 import com.overdose.homeschooljoint.bean.ModifyPwQBean;
 import com.overdose.homeschooljoint.bean.SimpleRBean;
 import com.overdose.homeschooljoint.bean.UserBean;
+import com.overdose.homeschooljoint.bean.UserDataBean;
 import com.overdose.homeschooljoint.utils.ApiCallback;
 import com.overdose.homeschooljoint.utils.AppClient;
 import com.overdose.homeschooljoint.utils.ConstantValue;
@@ -33,7 +34,7 @@ public class ModifyFragment extends BaseFragment {
     TextView tvModifyPassword;
 
     private String roleName;
-    private UserBean.DataBean userData;
+    private UserDataBean userData;
 
     public static ModifyFragment newInstance() {
         Bundle args = new Bundle();
@@ -56,7 +57,7 @@ public class ModifyFragment extends BaseFragment {
     protected void initialization() {
         String userStr =
                 (String) AppApplication.getInstance().getCacheData(ConstantValue.USER_JSON_STRING, "");
-        userData = new Gson().fromJson(userStr, UserBean.DataBean.class);
+        userData = new Gson().fromJson(userStr, UserDataBean.class);
 //        roleName = userData.isStudent() ? "student" : "teacher";
     }
 

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.overdose.homeschooljoint.AppApplication;
 
+import org.greenrobot.eventbus.EventBus;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -73,8 +75,17 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         isViewCreated = true;
         initialization();
+        if (isEventBusNeedRegister()) {
+            EventBus.getDefault().register(this);
+        }
     }
 
+    /**
+     * 是否需要注册EventBus
+     */
+    protected boolean isEventBusNeedRegister() {
+        return false;
+    }
     @Override
     public void onDetach() {
         super.onDetach();
@@ -128,6 +139,9 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroyView();
         isViewCreated = false;
         onUnBind();
+        if (isEventBusNeedRegister()) {
+            EventBus.getDefault().unregister(this);
+        }
     }
 
     public void addDisposable(Disposable disposable) {

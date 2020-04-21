@@ -4,47 +4,28 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.overdose.homeschooljoint.R;
-import com.overdose.homeschooljoint.activity.CourseActivity;
-import com.overdose.homeschooljoint.activity.HomeWorkStudentActivity;
-import com.overdose.homeschooljoint.activity.HomeWorkTeacherActivity;
-import com.overdose.homeschooljoint.activity.RatifyActivity;
-import com.overdose.homeschooljoint.activity.ScoreActivity;
-import com.overdose.homeschooljoint.activity.TeacherListActivity;
-import com.overdose.homeschooljoint.activity.ToLeaveActivity;
-import com.overdose.homeschooljoint.adpter.MenuAdapter;
 import com.overdose.homeschooljoint.adpter.TeacherListAdapter;
-import com.overdose.homeschooljoint.base.BaseFragment;
 import com.overdose.homeschooljoint.base.BaseListFragment;
-import com.overdose.homeschooljoint.bean.ModifyPwQBean;
 import com.overdose.homeschooljoint.bean.SelectTeacherEvent;
-import com.overdose.homeschooljoint.bean.SimpleRBean;
 import com.overdose.homeschooljoint.bean.TeacherListBean;
-import com.overdose.homeschooljoint.bean.UserBean;
 import com.overdose.homeschooljoint.bean.UserDataBean;
-import com.overdose.homeschooljoint.utils.ActivityUtils;
 import com.overdose.homeschooljoint.utils.ApiCallback;
 import com.overdose.homeschooljoint.utils.AppClient;
-import com.overdose.homeschooljoint.utils.ConstantValue;
-import com.overdose.homeschooljoint.utils.ToastUtil;
 import com.overdose.homeschooljoint.utils.UserUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import tl.com.easy_recycleview_library.BaseRecyclerViewAdapter;
 import tl.com.easy_recycleview_library.interfaces.OnItemClickListener;
 
-public class TeacherListFragment extends BaseListFragment<UserDataBean> {
+public class StudentLeaveListFragment extends BaseListFragment<UserDataBean> {
 
   public static final String TAG = "CourseFragment";
 
-  public static TeacherListFragment newInstance() {
+  public static StudentLeaveListFragment newInstance() {
     Bundle args = new Bundle();
-    TeacherListFragment fragment = new TeacherListFragment();
+    StudentLeaveListFragment fragment = new StudentLeaveListFragment();
     fragment.setArguments(args);
     return fragment;
   }

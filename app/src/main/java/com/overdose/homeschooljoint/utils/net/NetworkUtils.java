@@ -1,4 +1,4 @@
-package com.overdose.homeschooljoint.utils;
+package com.overdose.homeschooljoint.utils.net;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

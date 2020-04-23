@@ -24,7 +24,7 @@ import com.overdose.homeschooljoint.bean.RegisterQBean;
 import com.overdose.homeschooljoint.bean.UserBean;
 import com.overdose.homeschooljoint.utils.ActivityUtils;
 import com.overdose.homeschooljoint.utils.ApiCallback;
-import com.overdose.homeschooljoint.utils.AppClient;
+import com.overdose.homeschooljoint.utils.net.AppClient;
 import com.overdose.homeschooljoint.utils.ConstantValue;
 import com.overdose.homeschooljoint.utils.LogUtils;
 import com.overdose.homeschooljoint.utils.ToastUtil;

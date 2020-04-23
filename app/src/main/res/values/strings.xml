@@ -16,4 +16,6 @@
     <item name="android:textSize">17sp</item>
     <item name="android:text">提交</item>
   </style>
+  <string name="hello_world">Hello world!</string>
+  <string name="action_settings">Settings</string>
 </resources>

@@ -5,18 +5,13 @@ import android.view.View;
 
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.adpter.StudentLeaveListAdapter;
-import com.overdose.homeschooljoint.adpter.TeacherListAdapter;
 import com.overdose.homeschooljoint.base.BaseListFragment;
-import com.overdose.homeschooljoint.bean.SelectTeacherEvent;
 import com.overdose.homeschooljoint.bean.StudentLeaveListBean;
-import com.overdose.homeschooljoint.bean.TeacherListBean;
 import com.overdose.homeschooljoint.bean.ToLeaveDataBean;
 import com.overdose.homeschooljoint.bean.UserDataBean;
 import com.overdose.homeschooljoint.utils.ApiCallback;
-import com.overdose.homeschooljoint.utils.AppClient;
+import com.overdose.homeschooljoint.utils.net.AppClient;
 import com.overdose.homeschooljoint.utils.UserUtils;
-
-import org.greenrobot.eventbus.EventBus;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import tl.com.easy_recycleview_library.BaseRecyclerViewAdapter;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/label_opinion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:text="请输入学号"
+        android:textColor="@color/color_black_111111"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp">
+
+        <EditText
+            android:id="@+id/et_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/tv_score_btn"
+            android:background="@drawable/bg_white_stroke_999999_round5"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_score_btn"
+            style="@style/commit_btn"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
+            android:text="查询" />
+
+    </RelativeLayout>
+
+
+    <tl.com.easy_recycleview_library.BaseRecyclerView
+        android:id="@+id/base_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp" />
+</LinearLayout>

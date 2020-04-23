@@ -25,11 +25,10 @@ public class StudentHomeWorkListAdapter extends BaseRecyclerAdapter<HomeWordQBea
                                   int position) {
 
 
-//        Glide.with(context).load(item.getResId()).into(imageView);
-        holder.setText(R.id.tv_student, item.getStudentname());
-        holder.setText(R.id.tv_content, item.getContent());
-//        holder.setText(R.id.tv_teacher, item.getApprovername());
-//        holder.setText(R.id.tv_status, item.getStatusTxt());
+//
+        holder.setText(R.id.tv_teacher, item.getTeachername());
+        holder.setText(R.id.tv_content, item.getInstructions());
+
 
 
     }

@@ -2,6 +2,8 @@ package com.overdose.homeschooljoint.utils;
 
 
 
+import com.overdose.homeschooljoint.utils.net.ServiceException;
+
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
 

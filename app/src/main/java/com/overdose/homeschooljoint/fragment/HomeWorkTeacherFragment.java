@@ -7,18 +7,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.overdose.homeschooljoint.R;
-import com.overdose.homeschooljoint.activity.TeacherListActivity;
 import com.overdose.homeschooljoint.base.BaseFragment;
 import com.overdose.homeschooljoint.bean.HomeWordQBean;
 import com.overdose.homeschooljoint.bean.HomeWorkRBean;
-import com.overdose.homeschooljoint.bean.SimpleRBean;
-import com.overdose.homeschooljoint.bean.ToLeaveQBean;
 import com.overdose.homeschooljoint.bean.UserDataBean;
 import com.overdose.homeschooljoint.utils.ApiCallback;
-import com.overdose.homeschooljoint.utils.AppClient;
+import com.overdose.homeschooljoint.utils.net.AppClient;
 import com.overdose.homeschooljoint.utils.CalenderUtils;
 import com.overdose.homeschooljoint.utils.LogUtils;
-import com.overdose.homeschooljoint.utils.RetrofitUtils;
+import com.overdose.homeschooljoint.utils.net.RetrofitUtils;
 import com.overdose.homeschooljoint.utils.ToastUtil;
 import com.overdose.homeschooljoint.utils.UserUtils;
 

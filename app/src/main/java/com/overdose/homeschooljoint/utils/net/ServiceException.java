@@ -1,4 +1,4 @@
-package com.overdose.homeschooljoint.utils;
+package com.overdose.homeschooljoint.utils.net;
 
 public class ServiceException extends Exception {
 

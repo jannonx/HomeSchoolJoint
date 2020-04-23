@@ -6,15 +6,12 @@ import android.view.View;
 import com.overdose.homeschooljoint.R;
 import com.overdose.homeschooljoint.activity.FeedbackByStudentActivity;
 import com.overdose.homeschooljoint.adpter.StudentHomeWorkListAdapter;
-import com.overdose.homeschooljoint.adpter.StudentLeaveListAdapter;
-import com.overdose.homeschooljoint.base.BaseFragment;
 import com.overdose.homeschooljoint.base.BaseListFragment;
 import com.overdose.homeschooljoint.bean.HomeWordQBean;
 import com.overdose.homeschooljoint.bean.HomeWorkSBean;
-import com.overdose.homeschooljoint.bean.StudentLeaveListBean;
 import com.overdose.homeschooljoint.bean.UserDataBean;
 import com.overdose.homeschooljoint.utils.ApiCallback;
-import com.overdose.homeschooljoint.utils.AppClient;
+import com.overdose.homeschooljoint.utils.net.AppClient;
 import com.overdose.homeschooljoint.utils.UserUtils;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,28 +34,6 @@ public class HomeWorkStudentFragment extends BaseListFragment<HomeWordQBean> {
 
     }
 
-    public void getHomeWorkList() {
-        UserDataBean userData = UserUtils.getInstance().getUserData();
-        AppClient.subscribe(AppClient.getServerApi().getHomeWorkListByStudent(userData.getCode()),
-                new ApiCallback<HomeWorkSBean>() {
-                    @Override
-                    public void onSuccess(HomeWorkSBean model) {
-                        if (model.getStatus() == 200) {
-                            setListData(model.getData());
-//                      ToastUtil.showToast(getContext(), "修改密码成功!");
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(int code, String msg) {
-//                  ToastUtil.showToast(getContext(), "修改密码失败!");
-                    }
-
-                    @Override
-                    public void onFinish() {
-                    }
-                });
-    }
 
 
     @Override
@@ -77,6 +52,30 @@ public class HomeWorkStudentFragment extends BaseListFragment<HomeWordQBean> {
 
         getHomeWorkList();
     }
+
+    public void getHomeWorkList() {
+        UserDataBean userData = UserUtils.getInstance().getUserData();
+        AppClient.subscribe(AppClient.getServerApi().getHomeWorkListByStudent(userData.getCode()),
+            new ApiCallback<HomeWorkSBean>() {
+                @Override
+                public void onSuccess(HomeWorkSBean model) {
+                    if (model.getStatus() == 200) {
+                            setListData(model.getData());
+
+                    }
+                }
+
+                @Override
+                public void onFailure(int code, String msg) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                }
+            });
+    }
+
 
     @Override
     protected void refresh() {

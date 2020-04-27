@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/app_white"
-        app:cur_term="大三上学期"
+        app:cur_term="2019-2020春"
         app:cur_week="3"
         app:max_slide_item="7"
-        app:item_height="70dp"
+        app:item_height="55dp"
         app:show_notcurweek="false" />
 </LinearLayout>
